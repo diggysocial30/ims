@@ -1,0 +1,17 @@
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/model/vo/SKU.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/repository/CategoryRepository.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/repository/SKURepository.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/impl/ProductService.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/model/vo/AuditEntity.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/impl/CategoryService.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/factory/EntityServiceFactory.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/impl/SKUService.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/EntityService.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/InventoryService.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/entity/EntityType.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/model/vo/Product.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/impl/BaseEntityService.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/InventoryApplication.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/model/vo/Category.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/repository/ProductRepository.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/controller/InventoryController.java
