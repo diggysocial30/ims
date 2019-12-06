@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ash.ims.entity.dto.BaseEntityDTO;
 import com.ash.ims.entity.dto.ProductDTO;
-import com.ash.ims.model.vo.Product;
 import com.ash.ims.service.ProductService;
 
 @RestController
@@ -29,7 +29,7 @@ public class ProductController {
 	}
 
 	@PostMapping("/v1")
-	public Product postEntity(@RequestBody ProductDTO productDTO) throws Exception {
+	public BaseEntityDTO postEntity(@RequestBody ProductDTO productDTO) throws Exception {
 		return productService.addProduct(productDTO);
 	}
 

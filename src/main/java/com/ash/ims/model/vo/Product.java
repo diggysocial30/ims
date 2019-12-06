@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 @javax.persistence.Entity
@@ -20,6 +21,7 @@ import lombok.ToString;
 @ToString(exclude = "parent")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Where(clause="is_deleted='N'")
+@Getter
 public class Product extends BaseEntity {
 
 	@Column(nullable = false)

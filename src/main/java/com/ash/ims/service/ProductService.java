@@ -1,12 +1,12 @@
 package com.ash.ims.service;
 
+import com.ash.ims.entity.dto.BaseEntityDTO;
 import com.ash.ims.entity.dto.ProductDTO;
-import com.ash.ims.model.vo.Product;
 
 public interface ProductService {
-	Product addProduct(ProductDTO product);
+	BaseEntityDTO addProduct(ProductDTO product);
 
-	Product getProductById();
+	BaseEntityDTO getProductById();
 
-	Product updateProduct(ProductDTO product);
+	BaseEntityDTO updateProduct(ProductDTO product);
 }

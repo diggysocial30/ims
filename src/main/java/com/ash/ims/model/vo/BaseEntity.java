@@ -9,9 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @MappedSuperclass
 @AllArgsConstructor
+@Getter
 public abstract class BaseEntity extends AuditEntity {
 	
 	private static final long serialVersionUID = 1L;
