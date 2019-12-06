@@ -1,15 +1,9 @@
 package com.ash.ims.model.vo;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Column;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
@@ -17,10 +11,8 @@ import org.hibernate.annotations.Where;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.Tolerate;
 
 @javax.persistence.Entity
 @Table(name = "product")
@@ -28,17 +20,21 @@ import lombok.experimental.Tolerate;
 @ToString(exclude = "parent")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Where(clause="is_deleted='N'")
-@Data
-@Builder
-public class Product extends AuditEntity {
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class Product extends BaseEntity {
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "parent", cascade=CascadeType.REMOVE, orphanRemoval = true)
-    private List<SKU> children = new ArrayList<SKU>();
+	@Column(nullable = false)
+	@ManyToMany
+	private Set<SKU> sku;
 
-    @Tolerate
-    public Product(){}
+	@Column(nullable = false)
+	@ManyToMany
+	private Set<Category> category;
+
+	@Builder
+	private Product(Set<SKU> sku,Set<Category> category,String name,String description) {
+		super(name,description);
+		this.sku=sku;
+		this.category=category;
+	}
 
 }

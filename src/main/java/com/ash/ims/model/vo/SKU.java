@@ -1,15 +1,9 @@
 package com.ash.ims.model.vo;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Column;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
@@ -17,28 +11,37 @@ import org.hibernate.annotations.Where;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.Tolerate;
 
 @javax.persistence.Entity
-@Table(name = "product")
+@Table(name = "sku")
 @EqualsAndHashCode(exclude = "parent")
 @ToString(exclude = "parent")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Where(clause="is_deleted='N'")
-@Data
-@Builder
-public class SKU extends AuditEntity {
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class SKU extends BaseEntity {
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "parent", cascade=CascadeType.REMOVE, orphanRemoval = true)
-    private List<SKU> children = new ArrayList<SKU>();
-
-    @Tolerate
-    public SKU(){}
+	@Column(nullable = false, name = "name")
+	private String name;
+	
+	@Column(nullable = false, name = "description")
+	private String description;
+	
+	@Column(nullable = false, name = "stock")
+	private Long stock;
+	
+	@Column(nullable = false, name = "price")
+	private double price;
+	
+	@Column(nullable = false)
+	@ManyToMany
+	private Set<Product> product;
+	
+	@Builder
+	private SKU(Set<Product> product,String name,String description) {
+		super(name,description);
+		this.product=product;
+	}
 
 }
