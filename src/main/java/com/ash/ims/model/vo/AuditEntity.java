@@ -17,7 +17,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.experimental.SuperBuilder;
+import lombok.Data;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -25,7 +25,7 @@ import lombok.experimental.SuperBuilder;
         value = {"updated_at", "created_at", "created_by", "updated_by", "is_deleted"},
         allowGetters = true
 )
-@SuperBuilder
+@Data
 public abstract class AuditEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

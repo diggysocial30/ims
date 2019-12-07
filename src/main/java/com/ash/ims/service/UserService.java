@@ -5,6 +5,7 @@ import com.ash.ims.model.vo.User;
 
 public interface UserService  {
 
-    User findByEmail(String email);
-    User save(UserDTO userRegistrationDto);
+    UserDTO findByUserName(String userName);
+    User save(UserDTO userDTO);
+	UserDTO findOrCreate(UserDTO userDTO);
 }

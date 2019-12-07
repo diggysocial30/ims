@@ -1,5 +1,7 @@
 package com.ash.ims.entity.dto;
 
+import com.ash.ims.entity.UserRole;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,7 +13,10 @@ public class UserDTO {
 
     private String confirmPassword;
 
-    private String email;
+    private String userName;
+    
+    @Builder.Default
+    private UserRole userRole=UserRole.VIEWER;
 
    
 }

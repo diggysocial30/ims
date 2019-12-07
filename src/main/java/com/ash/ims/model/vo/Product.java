@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.ToString;
+import lombok.experimental.Tolerate;
 
 @javax.persistence.Entity
 @Table(name = "product")
@@ -21,7 +21,6 @@ import lombok.ToString;
 @ToString(exclude = "parent")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Where(clause="is_deleted='N'")
-@Getter
 public class Product extends BaseEntity {
 
 	@Column(nullable = false)
@@ -32,6 +31,9 @@ public class Product extends BaseEntity {
 	@ManyToMany
 	private Set<Category> category;
 
+	@Tolerate
+	Product(){}
+	
 	@Builder
 	private Product(Set<SKU> sku,Set<Category> category,String name,String description) {
 		super(name,description);

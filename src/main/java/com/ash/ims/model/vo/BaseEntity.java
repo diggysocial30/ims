@@ -8,11 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.experimental.Tolerate;
 
 @MappedSuperclass
-@AllArgsConstructor
 @Getter
 public abstract class BaseEntity extends AuditEntity {
 	
@@ -28,9 +27,11 @@ public abstract class BaseEntity extends AuditEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 	
+	@Tolerate
+	BaseEntity(){}
+	
 	protected BaseEntity(String name, String description) {
 		this.name=name;
 		this.description=description;
 	}
-
 }

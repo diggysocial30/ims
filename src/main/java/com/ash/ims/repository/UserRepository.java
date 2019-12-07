@@ -7,5 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.ash.ims.model.vo.User;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
+	
+	User findByUserName(String userName);
+
 
 }
