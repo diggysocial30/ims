@@ -36,6 +36,9 @@ public class SKU extends BaseEntity {
 	@Column(nullable = false, name = "price")
 	private double price;
 	
+	@Column(nullable = false, name = "size")
+	private Long size;
+	
 	@Column(nullable = false)
 	@ManyToMany
 	private Set<Product> product;

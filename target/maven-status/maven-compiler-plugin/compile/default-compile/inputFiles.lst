@@ -1,6 +1,5 @@
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/repository/CategoryRepository.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/impl/ProductServiceImpl.java
-/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/controller/LoginController.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/model/vo/AuditEntity.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/ProductService.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/entity/dto/BaseEntityDTO.java
@@ -28,6 +27,7 @@
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/impl/SKUService.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/EntityService.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/entity/EntityType.java
+/Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/controller/DisplayController.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/service/UserService.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/InventoryApplication.java
 /Users/divyagupta/Downloads/vendor/src/main/java/com/ash/ims/entity/dto/ProductDTO.java
